@@ -3,8 +3,8 @@ package io.github.vmzakharov.ecdataframe.ui;
 import io.github.vmzakharov.ecdataframe.dsl.EvalContext;
 import io.github.vmzakharov.ecdataframe.dsl.SimpleEvalContext;
 import io.github.vmzakharov.ecdataframe.dsl.function.BuiltInFunctions;
+import io.github.vmzakharov.ecdataframe.ui.function.DfBrowse;
 import io.github.vmzakharov.ecdataframe.ui.function.DfAggregate;
-import io.github.vmzakharov.ecdataframe.ui.function.BrowseDataFrame;
 import io.github.vmzakharov.ecdataframe.ui.function.DfSelect;
 import io.github.vmzakharov.ecdataframe.ui.function.DfLoad;
 import io.github.vmzakharov.ecdataframe.ui.function.DfSave;
@@ -53,7 +53,7 @@ extends JFrame
     private void loadFunctions()
     {
         BuiltInFunctions.addFunctionDescriptor(new DfAggregate());
-        BuiltInFunctions.addFunctionDescriptor(new BrowseDataFrame());
+        BuiltInFunctions.addFunctionDescriptor(new DfBrowse());
         BuiltInFunctions.addFunctionDescriptor(new DfSelect());
         BuiltInFunctions.addFunctionDescriptor(new DfLoad());
         BuiltInFunctions.addFunctionDescriptor(new DfSave());

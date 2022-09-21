@@ -32,6 +32,9 @@ extends JPanel
                         .setContents(new StringSelection(this.textArea.getText()), null));
 
         ButtonPanel buttonPanel = new ButtonPanel();
+        buttonPanel.addButton(FontSizeAdjustButtons.increaseFontSizeButton(textArea));
+        buttonPanel.addButton(FontSizeAdjustButtons.decreaseFontSizeButton(textArea));
+
         buttonPanel.addButton(copyButton);
         buttonPanel.addButton(clearButton);
 

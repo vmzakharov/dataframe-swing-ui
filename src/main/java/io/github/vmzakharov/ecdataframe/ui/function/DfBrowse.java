@@ -5,13 +5,14 @@ import io.github.vmzakharov.ecdataframe.dsl.function.IntrinsicFunctionDescriptor
 import io.github.vmzakharov.ecdataframe.dsl.value.DataFrameValue;
 import io.github.vmzakharov.ecdataframe.dsl.value.Value;
 import io.github.vmzakharov.ecdataframe.dsl.value.ValueType;
+import io.github.vmzakharov.ecdataframe.ui.FloatingBrowseWindow;
 import org.eclipse.collections.api.factory.Lists;
 import org.eclipse.collections.api.list.ListIterable;
 
-public class BrowseDataFrame
+public class DfBrowse
 extends IntrinsicFunctionDescriptor
 {
-    public BrowseDataFrame()
+    public DfBrowse()
     {
         super("browse", Lists.immutable.of("dataFrame"));
     }

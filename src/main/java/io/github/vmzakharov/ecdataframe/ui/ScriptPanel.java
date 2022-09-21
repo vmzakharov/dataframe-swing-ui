@@ -57,15 +57,10 @@ extends JPanel
         JButton clearButton = new JButton("Clear");
         clearButton.addActionListener(e -> textArea.setText(""));
 
-        JButton increaseFontSizeButton = new JButton("A+");
-        increaseFontSizeButton.addActionListener(e -> this.changeFontSize(textArea, 1.1f));
-        JButton decreaseFontSizeButton = new JButton("A-");
-        decreaseFontSizeButton.addActionListener(e -> this.changeFontSize(textArea, 0.9f));
-
         ButtonPanel buttonPanel = new ButtonPanel();
 
-        buttonPanel.addButton(increaseFontSizeButton);
-        buttonPanel.addButton(decreaseFontSizeButton);
+        buttonPanel.addButton(FontSizeAdjustButtons.increaseFontSizeButton(textArea));
+        buttonPanel.addButton(FontSizeAdjustButtons.decreaseFontSizeButton(textArea));
 
         buttonPanel.addButton(runButton);
         buttonPanel.addButton(parseButton);
@@ -74,14 +69,6 @@ extends JPanel
         this.add(buttonPanel, BorderLayout.SOUTH);
 
         this.setPreferredSize(new Dimension(500, 500));
-    }
-
-    private void changeFontSize(JTextArea textArea, float factor)
-    {
-        Font currentFont = textArea.getFont();
-        float size = currentFont.getSize2D();
-        Font newFont = currentFont.deriveFont(size * factor);
-        textArea.setFont(newFont);
     }
 
     public void addActionPostEvaluation(Runnable action)
