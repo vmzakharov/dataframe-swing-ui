@@ -1,5 +1,6 @@
 package io.github.vmzakharov.ecdataframe.ui;
 
+import io.github.vmzakharov.ecdataframe.dataframe.ErrorReporter;
 import io.github.vmzakharov.ecdataframe.dsl.EvalContext;
 import io.github.vmzakharov.ecdataframe.dsl.SimpleEvalContext;
 import io.github.vmzakharov.ecdataframe.dsl.function.BuiltInFunctions;
@@ -31,11 +32,12 @@ extends JFrame
         ScriptPanel scriptPanel = new ScriptPanel(this.storedContext);
         MemoryPanel memoryPanel = new MemoryPanel(this.storedContext);
         OutputPanel outputPanel = new OutputPanel();
-//        PrinterFactory.getPrinter().println(result.stringValue());
 
         scriptPanel.addActionPostEvaluation(memoryPanel::refreshVariableList);
 
         PrinterFactory.setPrinter(outputPanel::addText);
+        PrinterFactory.setErrPrinter(outputPanel::addText);
+        ErrorReporter.setErrorPrinter(outputPanel::addText);
 
         JSplitPane horizontalSplit = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, scriptPanel, memoryPanel);
         horizontalSplit.setOneTouchExpandable(true);
