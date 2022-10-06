@@ -80,7 +80,7 @@ extends IntrinsicFunctionDescriptor
     @Override
     public String usageString()
     {
-        return "Usage: " + this.getName() + "(df, ('aggCol1', ...), ('function', ...)[, ('aggBy', ...)])";
+        return "Usage: " + this.getName() + "(df, v('aggCol1', ...), v('function', ...)[, v('aggBy', ...)])";
     }
 
     @Override
